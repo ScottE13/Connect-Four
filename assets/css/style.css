@@ -5,8 +5,20 @@ body {
 #game-board {
     background-color: blue;
     height: 600px;
-    Width: 700px;
+    width: 700px;
     border: solid;
     margin: auto;
     margin-top: 100px;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#game-board div {
+    height: 90px;
+    width: 90px;
+    margin: 5px;
+    border-radius: 50%;
+    background-color: white;
+
 }
