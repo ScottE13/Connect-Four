@@ -12,13 +12,17 @@ for (let i = 0; i < 42; i++) {
 function addPiece() {
 
     if (turn.textContent == "Red's Turn") {
-        this.classList.add("red");
-        turn.textContent ="Yellow's Turn"
+        if (this.classList.contains("starting-option")) {
+            this.classList.add("red");
+            turn.textContent ="Yellow's Turn"
+        }
     } 
 
     else if (turn.textContent == "Yellow's Turn") {
-        this.classList.add("yellow");
-        turn.textContent ="Red's Turn"
+        if (this.classList.contains("starting-option")) {
+            this.classList.add("yellow");
+            turn.textContent ="Red's Turn"
+        }
     };
 };
    
