@@ -13,6 +13,7 @@ function addPiece() {
 
     if (turn.textContent == "Red's Turn") {
         if (this.classList.contains("starting-option")) {
+            this.classList.remove("starting-option");
             this.classList.add("red");
             turn.textContent ="Yellow's Turn"
         }
@@ -20,6 +21,7 @@ function addPiece() {
 
     else if (turn.textContent == "Yellow's Turn") {
         if (this.classList.contains("starting-option")) {
+            this.classList.remove("starting-option");
             this.classList.add("yellow");
             turn.textContent ="Red's Turn"
         }
