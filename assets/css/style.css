@@ -19,6 +19,17 @@ body {
     width: 90px;
     margin: 5px;
     border-radius: 50%;
-    background-color: white;
 
+}
+
+.empty-space {
+    background-color: white;
+}
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
 }
