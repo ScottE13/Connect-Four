@@ -87,6 +87,18 @@ function detectWin(gamestate) {
             } else if (currentPlayer === 2) {
                 alert("Yellow is the winner!");
             }}
-        
+
+        // DIAGANOL OPPOSITE DIRECTION
+        if (
+            i % 7 > 2 &&
+            gamestate[i] === currentPlayer &&
+            gamestate[i+6] === currentPlayer &&
+            gamestate[i+12] === currentPlayer &&
+            gamestate[i+18] === currentPlayer
+            ) { if (currentPlayer === 1) {
+                alert("Red is the winner!");
+            } else if (currentPlayer === 2) {
+                alert("Yellow is the winner!");
+            }}      
     }     
 }
