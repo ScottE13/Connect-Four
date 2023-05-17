@@ -78,6 +78,7 @@ function detectWin(gamestate) {
 
         // DIAGANOL 
         if (
+            i % 7 <4 &&
             gamestate[i] === currentPlayer &&
             gamestate[i+8] === currentPlayer &&
             gamestate[i+16] === currentPlayer &&
