@@ -89,6 +89,10 @@ function detectWin(gamestate) {
             ) { endGame();
             }
     }     
+    // CHECK FOR DRAW
+    if (!gamestate.includes(0)) {
+        endGame();
+    }
 }
 
 function endGame() {
@@ -99,10 +103,12 @@ function endGame() {
     turn.textContent = "";
 
     let winDisplay = document.getElementById("winning-player");
-    if (currentPlayer === 1) {
+    if (currentPlayer === 1 && gamestate.includes(0) ) {
         winDisplay.textContent = 'Red Player Wins!';
-    } else if (currentPlayer === 2) {
+    } else if (currentPlayer === 2 && gamestate.includes(0)) {
         winDisplay.textContent = 'Yellow Player Wins!';
+    } else {
+        winDisplay.textContent = 'It is a draw!';
     }
 }
 
