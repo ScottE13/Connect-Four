@@ -51,9 +51,8 @@ function addPiece() {
 
 
 function detectWin(gamestate) {
-
-    //HORIZONTAL
     for (let i = 0; i < 42; i++) {
+        //HORIZONTAL
         if(
             i % 7 <4 &&
             gamestate[i] === 1 &&
@@ -72,7 +71,23 @@ function detectWin(gamestate) {
             ) {
                 alert("Yellow is the winner!");
             }
-    }
-    // VERTICAL
-    
+
+         // VERTICAL
+         if(
+            gamestate[i] === 1 &&
+            gamestate[i+7] === 1 &&
+            gamestate[i+14] === 1 &&
+            gamestate[i+21] === 1
+            ) {
+                alert("Red is the winner!");
+            } 
+            else if (
+            gamestate[i] === 2 &&
+            gamestate[i+7] === 2 &&
+            gamestate[i+14] === 2 &&
+            gamestate[i+21] === 2   
+            ) {
+                alert("Yellow is the winner!");
+            }
+    }     
 }
