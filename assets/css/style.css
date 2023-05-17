@@ -101,3 +101,22 @@ h2 {
     min-height: 300px;
 
 }
+
+@media screen and (max-width: 740px), (max-height: 650px) {
+    #game-board {
+        height: 320px;
+        width: 370px;
+        border: solid 2px;
+        margin: 2px auto;
+    }
+
+    #game-board div {
+        height: 48.25px;
+        width: 48.25px;
+        margin: 2px;
+    }
+
+    .modal-content {
+        width: 80%;
+    }
+}
