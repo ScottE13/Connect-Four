@@ -54,24 +54,25 @@ function detectWin(gamestate) {
 
     //HORIZONTAL
     for (let i = 0; i < 42; i++) {
-        if(i % 7 <4) {
-            if(
-             gamestate[i] === 1 &&
-             gamestate[i+1] === 1 &&
-             gamestate[i+2] === 1 &&
-             gamestate[i+3] === 1
+        if(
+            i % 7 <4 &&
+            gamestate[i] === 1 &&
+            gamestate[i+1] === 1 &&
+            gamestate[i+2] === 1 &&
+            gamestate[i+3] === 1
             ) {
                 alert("Red is the winner!");
             } 
             else if (
-             gamestate[i] === 2 &&
-             gamestate[i+1] === 2 &&
-             gamestate[i+2] === 2 &&
-             gamestate[i+3] === 2   
+            i % 7 <4 &&
+            gamestate[i] === 2 &&
+            gamestate[i+1] === 2 &&
+            gamestate[i+2] === 2 &&
+            gamestate[i+3] === 2   
             ) {
                 alert("Yellow is the winner!");
             }
-        }
     }
+    // VERTICAL
     
 }
