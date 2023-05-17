@@ -105,5 +105,16 @@ function endGame() {
         winDisplay.textContent = 'Yellow Player Wins!';
     }
     
-    
+    let reset = document.getElementById("reset");
+    reset.onclick = function() {
+        location.reload();
+    };
+
+    // Credit  - w3schools.com (https://www.w3schools.com/howto/howto_css_modals.asp)
+    window.onclick=function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+
 }
