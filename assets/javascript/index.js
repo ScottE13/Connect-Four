@@ -2,7 +2,7 @@ const space = document.getElementsByClassName("space");
 const turn = document.getElementById("turn");
 let currentPlayer = 1;
 let gamestate = 
-// 0 = empty, 1 = red, 2 = yellow
+// 0 = empty, 1 = pink, 2 = blue
 [
     0, 0, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0,
@@ -26,23 +26,23 @@ function addPiece() {
     var belowSpace = thisSpace + 7;
     
     
-    if (turn.textContent == "Red's Turn") {
+    if (turn.textContent == "Pink's Turn") {
         currentPlayer = 1;
         if (this.classList.contains("starting-option") || space[belowSpace].classList.contains("used") && !this.classList.contains("used"))  {
             this.classList.remove("starting-option");
-            this.classList.add("red", "used");
+            this.classList.add("pink", "used");
             gamestate[thisSpace] = 1;
-            turn.textContent ="Yellow's Turn";
+            turn.textContent ="Blue's Turn";
         }
     } 
 
-    else if (turn.textContent == "Yellow's Turn") {
+    else if (turn.textContent == "Blue's Turn") {
         currentPlayer = 2;
         if (this.classList.contains("starting-option") || space[belowSpace].classList.contains("used") && !this.classList.contains("used")) {
             this.classList.remove("starting-option");
-            this.classList.add("yellow", "used");
+            this.classList.add("blue", "used");
             gamestate[thisSpace] = 2;
-            turn.textContent ="Red's Turn";
+            turn.textContent ="Pink's Turn";
         }
     }
     detectWin(gamestate);
@@ -104,9 +104,9 @@ function endGame() {
 
     let winDisplay = document.getElementById("winning-player");
     if (currentPlayer === 1 && gamestate.includes(0) ) {
-        winDisplay.textContent = 'Red Player Wins!';
+        winDisplay.textContent = 'Pink Player Wins!';
     } else if (currentPlayer === 2 && gamestate.includes(0)) {
-        winDisplay.textContent = 'Yellow Player Wins!';
+        winDisplay.textContent = 'Blue Player Wins!';
     } else {
         winDisplay.textContent = 'It is a draw!';
     }

@@ -1,5 +1,6 @@
 body {
     text-align: center;
+    color: white;
 
     /* Image Credit
     https://www.freepik.com/
@@ -52,12 +53,12 @@ body {
     opacity: 0.9;
 }
 
-.red {
+.pink {
     background-color: #FF00FF;
     opacity: 1.0;
 }
 
-.yellow {
+.blue {
     background-color: #2d5cff;
     opacity: 1.0;
 }
@@ -77,9 +78,10 @@ body {
 }
 
 .modal-content {
-    background-color: #fefefe;
+    background-color: black; 
     margin: 15% auto; 
     padding: 20px;
     border: 1px solid #888;
     width: 80%; 
+    
   }
