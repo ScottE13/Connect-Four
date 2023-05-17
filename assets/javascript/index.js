@@ -104,17 +104,12 @@ function endGame() {
     } else if (currentPlayer === 2) {
         winDisplay.textContent = 'Yellow Player Wins!';
     }
-    
-    let reset = document.getElementById("reset");
-    reset.onclick = function() {
+}
+
+let reset = document.getElementsByClassName("reset");
+    reset[0].onclick = function() {
         location.reload();
     };
-
-    // Credit  - w3schools.com (https://www.w3schools.com/howto/howto_css_modals.asp)
-    window.onclick=function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
+    reset[1].onclick = function() {
+        location.reload();
     };
-
-}
