@@ -75,5 +75,18 @@ function detectWin(gamestate) {
             } else if (currentPlayer === 2) {
                 alert("Yellow is the winner!");
             }}
+
+        // DIAGANOL 
+        if (
+            gamestate[i] === currentPlayer &&
+            gamestate[i+8] === currentPlayer &&
+            gamestate[i+16] === currentPlayer &&
+            gamestate[i+24] === currentPlayer
+            ) { if (currentPlayer === 1) {
+                alert("Red is the winner!");
+            } else if (currentPlayer === 2) {
+                alert("Yellow is the winner!");
+            }}
+        
     }     
 }
