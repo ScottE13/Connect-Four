@@ -1,17 +1,42 @@
 body {
     text-align: center;
+
+    /* Image Credit
+    https://www.freepik.com/
+     */
+    background-image: url("../images/page-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    /* fallback */
+    background-color: black; 
 }
 
+
 #game-board {
-    background-color: blue;
+    
     height: 600px;
     width: 700px;
-    border: solid;
+    border: solid 20px;
+    border-color: black;
+    border-radius: 30px;
     margin: auto;
     margin-top: 100px;
-    padding: 5px;
     display: flex;
     flex-wrap: wrap;
+
+    /* Image Credit
+    https://unsplash.com/
+     */
+    background-image: url("../images/game-background.jpg");
+    background-repeat: no-repeat;
+    background-size: 700px 600px;
+    background-position: center;
+
+    /* fallback */
+    background-color: black; 
+    
 }
 
 #game-board div {
@@ -24,14 +49,17 @@ body {
 
 .space {
     background-color: white;
+    opacity: 0.9;
 }
 
 .red {
-    background-color: red;
+    background-color: #FF00FF;
+    opacity: 1.0;
 }
 
 .yellow {
-    background-color: yellow;
+    background-color: #2d5cff;
+    opacity: 1.0;
 }
 
 /* Credit  - w3schools.com (https://www.w3schools.com/howto/howto_css_modals.asp) */
