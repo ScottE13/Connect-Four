@@ -1,7 +1,7 @@
 # Connect Four 
 
 ![Site Image](assets/images/readme-img.jpg)
-by Scott Edwards
+<br>by Scott Edwards
 
 [Click here to view the live website.](https://scotte13.github.io/Connect-Four/)
 
@@ -65,11 +65,11 @@ The javascript code would all be contained within one external file.
 
 Simple wireframes were drawn up using [wireframe.cc](https://wireframe.cc/)
 
-For the main game page:
-![Wireframe Main Page](docs/wireframes/wireframe-main.jpg) 
+For the main game page:<br>
+![Wireframe Main Page](docs/wireframes/wireframe-main.jpg) <br>
 
-For the display generated at the end of a game:
-![Wireframe Modal Popup](docs/wireframes/wireframe-modal.jpg)
+For the display generated at the end of a game:<br>
+![Wireframe Modal Popup](docs/wireframes/wireframe-modal.jpg)<br>
 
 ## Visual Design
 
