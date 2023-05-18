@@ -1,8 +1,13 @@
+// --------------- Declare Variables ---------------
+
 const space = document.getElementsByClassName("space");
 const turn = document.getElementById("turn");
 let currentPlayer = 1;
 let gamestate = 
-// 0 = empty, 1 = pink, 2 = blue
+// Array to store gamestate as moves are made.
+// 0 signifies an empty space.
+// 1 will signify a pink piece.
+// 2 will signifiy a blue piece. 
 [
     0, 0, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0,
@@ -12,6 +17,11 @@ let gamestate =
     0, 0, 0, 0, 0, 0, 0
 ];
 
+// --------------- Game Setup ---------------
+// Loops to set event listeners on each space.
+// Sets ID for all game spaces.
+// Labels the bottom row of spaces with their own class.
+
 for (let i = 0; i < 42; i++) {
     space[i].addEventListener("click", addPiece);
     space[i].setAttribute("id", i);
@@ -19,6 +29,16 @@ for (let i = 0; i < 42; i++) {
         space[i].classList.add("starting-option");
     }
 }
+
+// --------------- Game Play ---------------
+// Creates conditions for where a player may place their piece.
+// Player can place a piece on the bottom row or above another piece only.
+// Player cannot place a piece on a space that was already taken.
+//
+// Updates the gamestate array with the players move.
+// Rotates between players and updates the DOM display for who's turn it is.
+// Checks if anyone has won at the end of each turn. 
+
 
 function addPiece() {
 
@@ -48,9 +68,17 @@ function addPiece() {
     detectWin(gamestate);
 }
 
+// --------------- Check for Win---------------
+// Loops through the gamestate array to check if a player has four tokens in a row and has won the game.
+// Checks if all spaces are taken so the game is a draw. 
+// Calls the endGame function if either of the above is true. 
+//
+// Credit to Tom Campbell's youtube video for the method used to specify checks using the remainder operator, to prevent false wins being recorded.
+// https://www.youtube.com/watch?v=kA9OOeUXXSU&ab_channel=TomCampbell
+
 function detectWin(gamestate) {
     for (let i = 0; i < 42; i++) {
-        //HORIZONTAL
+        //HORIZONTAL CHECK
         if (
             i % 7 <4 &&
             gamestate[i] === currentPlayer &&
@@ -60,7 +88,7 @@ function detectWin(gamestate) {
             ) { endGame();
             }
     
-         // VERTICAL
+         // VERTICAL CHECK
          if (
             gamestate[i] === currentPlayer &&
             gamestate[i+7] === currentPlayer &&
@@ -69,7 +97,7 @@ function detectWin(gamestate) {
             ) { endGame();
             }
 
-        // DIAGANOL 
+        // DIAGANOL CHECK
         if (
             i % 7 <4 &&
             gamestate[i] === currentPlayer &&
@@ -79,7 +107,7 @@ function detectWin(gamestate) {
             ) { endGame();
             }
 
-        // DIAGANOL OPPOSITE DIRECTION
+        // DIAGANOL OPPOSITE DIRECTION CHECK
         if (
             i % 7 > 2 &&
             gamestate[i] === currentPlayer &&
@@ -94,6 +122,11 @@ function detectWin(gamestate) {
         endGame();
     }
 }
+
+// --------------- Game End ---------------
+// Ends the game when someone has won or there is a draw.
+// Makes modal visible and updates the DOM to display the games result.
+// Allows players to then reset the game by reloading the page.
 
 function endGame() {
 
